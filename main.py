@@ -11,9 +11,11 @@ def now():
     now_time = datetime.now()
     date = now_time.strftime("%d/%m/%Y %H:%M:%S")
     return date
-strdate = now()
-# requests to site
 
+
+Now = now()
+
+# requests to site
 r = requests.get(url)
 
 # working with BeautifulSoup typography__StyledTypography-owin6q-0 jvRAOp
@@ -25,6 +27,6 @@ prices = price.text
 # connecting to database
 conn = mysql.connector.connect(host='localhost', user='root', password='', database='Btc_Price')
 cursor = conn.cursor()
-cursor.execute('INSERT INTO price VALUES(\'%s\',\'%s\')'%(prices,strdate))
+cursor.execute('INSERT INTO price VALUES(\'%s\',\'%s\')'%(prices,Now))
 conn.commit()
 conn.close()
