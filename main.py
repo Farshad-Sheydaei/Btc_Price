@@ -19,7 +19,7 @@ cursor = conn.cursor()
 # requests to site
 r = requests.get(url)
 
-# working with BeautifulSoup typography__StyledTypography-owin6q-0 jvRAOp
+# working with BeautifulSoup
 soup = BeautifulSoup(r.text, 'html.parser')
 price = soup.find('span',attrs={'class':'typography__StyledTypography-owin6q-0 jvRAOp'})
 prices = price.text
